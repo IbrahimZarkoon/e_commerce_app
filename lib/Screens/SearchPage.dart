@@ -148,11 +148,11 @@ class _SearchPageState extends State<SearchPage> {
   Widget recentSearchCon(String title)
   {
     return Container(
-      padding: EdgeInsets.only(top: 5,bottom: 5),
+      padding: EdgeInsets.only(top: 0,bottom: 20),
       decoration: BoxDecoration(
           border: Border(bottom: BorderSide(color: Colors.black.withOpacity(0.1),width: 0.5))
       ),
-      margin: EdgeInsets.only(left: 20,right: 20,bottom: 20,top: 20),
+      margin: EdgeInsets.only(left: 20,right: 20,bottom: 0,top: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
 

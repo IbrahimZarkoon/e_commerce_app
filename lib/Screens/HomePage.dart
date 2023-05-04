@@ -49,6 +49,7 @@ class _HomePageState extends State<HomePage> {
           physics: const BouncingScrollPhysics(),
           scrollDirection: Axis.vertical,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
 
               //Top Deal/Heading
@@ -72,7 +73,7 @@ class _HomePageState extends State<HomePage> {
 
                 child: ListView.builder(
 
-                  padding: EdgeInsets.only(left: 15,right: 15,top: 5,bottom: 5),
+                  padding: EdgeInsets.only(left: 0,right: 0,top: 5,bottom: 5),
                   physics: BouncingScrollPhysics(),
                     scrollDirection: Axis.horizontal,
                     shrinkWrap: true,
@@ -84,43 +85,65 @@ class _HomePageState extends State<HomePage> {
                     {
                       Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => SingleProduct(tag: "tag", productid: "productid")));
                     },
-                    child: Container(
-                      margin: EdgeInsets.only(right: 20),
-                      padding: EdgeInsets.only(top: 25,bottom: 25,left: 25,right: 15
+                    child: Stack(
+                      children: [
+
+                        Container(
+                        margin: EdgeInsets.only(right: 2),
+                        padding: EdgeInsets.only(top: 25,bottom: 25,left: 25,right: 15
+                        ),
+                        width: MediaQuery.of(context).size.width,
+                        foregroundDecoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                              colors: [
+                                Colors.black.withOpacity(0.65),
+                                Colors.black.withOpacity(0.65)
+                              ]
+                          ),
+                        ),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(3),
+                          color: Color(0xffa41818),
+                          image: DecorationImage(
+                            image: NetworkImage("https://cdn.vectorstock.com/i/preview-1x/19/50/sale-and-discount-promo-background-vector-27471950.jpg"),
+                            fit: BoxFit.cover
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.2),
+                              spreadRadius: 1,
+                              blurRadius: 1.5,
+                              offset: Offset(2,2)
+                            )
+                          ]
+                        ),
+
                       ),
-                      width: MediaQuery.of(context).size.width*0.8,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(3),
-                        color: Color(0xffa41818),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.2),
-                            spreadRadius: 1,
-                            blurRadius: 1.5,
-                            offset: Offset(2,2)
-                          )
-                        ]
-                      ),
 
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        Positioned(
+                          left: 20,right: 0,top: 20,bottom: 20,
+                          child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
 
-                        children: [
+                          children: [
 
-                          Text("Ends 26 May",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 13)),
+                            Text("Ends 26 May",style: TextStyle(color: Colors.white.withOpacity(0.9),fontWeight: FontWeight.bold,fontSize: 13)),
 
-                          //const SizedBox(height: 10,),
+                            //const SizedBox(height: 10,),
 
-                          Text("20% OFF SELECTED BIG BRAND TOYS",maxLines: 3,style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 30),),
+                            Text("20% OFF SELECTED BIG BRAND TOYS",maxLines: 3,style: TextStyle(color: Colors.white.withOpacity(0.9),fontWeight: FontWeight.bold,fontSize: 30),),
 
-                          //const SizedBox(height: 10,),
+                            //const SizedBox(height: 10,),
 
-                          Text("Shop now",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 14,decoration: TextDecoration.underline)),
+                            Text("Shop now",style: TextStyle(color: Colors.white.withOpacity(0.9),fontWeight: FontWeight.bold,fontSize: 14,decoration: TextDecoration.underline)),
 
 
-                        ],
-                      ),
+                          ],
+                        ),)
+                      ]
                     ),
                   );
                 }),
@@ -289,14 +312,14 @@ class _HomePageState extends State<HomePage> {
               //       )
               //     : const SizedBox(),
 
-              Headings(context, "Top Categories"),
-
-              topCategories(context),
-
               Headings(context, "Top Products"),
 
               //Top Products Slider
               topProducts(context),
+
+              Headings(context, "Top Categories"),
+
+              topCategories(context),
 
               Headings(context, "Popular items this season"),
 
@@ -571,6 +594,63 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
+
+              //Subscription Container
+              Container(
+                color: Colors.white,
+                padding: EdgeInsets.only(top: 40,bottom: 40,left: 15,right: 15),
+
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+
+                  children: [
+
+                    Text("Subscribe to our newsletter",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
+
+                    const SizedBox(height: 10,),
+
+                    Text("Be the first to get the latest news about trends, promotions and much more!",style: TextStyle(color: Colors.black.withOpacity(0.6),fontSize: 12),),
+
+                    const SizedBox(height: 20,),
+
+
+                Container(
+                  height: 50,
+                  child: TextField(
+
+                    decoration: InputDecoration(
+                      labelText: 'Enter your email address',
+                      labelStyle: TextStyle(fontSize: 13),
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.grey.shade400,
+                          width: 0.5,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+
+                    const SizedBox(height: 20,),
+
+                    Container(
+                      padding: EdgeInsets.only(top: 15,bottom: 15),
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.circular(3)
+                      ),
+                      child: Text("SUBSCRIBE",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
+                    ),
+
+                    const SizedBox(height: 20,),
+
+                    Text("I would like to unsubscribe",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),)
+
+                  ],
+                ),
+              )
             ],
           ),
         ),
