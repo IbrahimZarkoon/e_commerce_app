@@ -340,7 +340,7 @@ class _MyCartState extends State<MyCart> {
                   padding: const EdgeInsets.only(
                       top: 15, bottom: 15, left: 30, right: 30),
                   decoration: BoxDecoration(
-                      color: const Color(0xff31ca00),
+                      color: const Color(0xFF0071dc),
                       borderRadius: BorderRadius.circular(5)),
                   child: const Text(
                     "CHECKOUT",

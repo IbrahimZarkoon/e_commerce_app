@@ -90,11 +90,11 @@ class _SingleCategoryState extends State<SingleCategory> {
               GestureDetector(
                   onTap: ()
                   {
-                    setState(() {
-                      searchbar = !searchbar;
-                    });
+                    Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => SearchPage()));
                   },
-                  child: Icon(CupertinoIcons.search_circle,size: 30,)),
+                  child: Hero(
+                      tag: "searchbar",
+                      child: Icon(CupertinoIcons.search_circle,size: 30,))),
 
               const SizedBox(width: 20,),
 
@@ -104,12 +104,12 @@ class _SingleCategoryState extends State<SingleCategory> {
 
             ],
 
-            bottom:searchbar? PreferredSize(preferredSize: Size.fromHeight(MediaQuery.of(context).size.height*0.05),
-                child: Column(
-                  children: [
-                    SearchBar(context),
-                  ],
-                )) : PreferredSize(child: SizedBox(), preferredSize: Size.fromHeight(0))
+            // bottom:searchbar? PreferredSize(preferredSize: Size.fromHeight(MediaQuery.of(context).size.height*0.05),
+            //     child: Column(
+            //       children: [
+            //         SearchBar(context),
+            //       ],
+            //     )) : PreferredSize(child: SizedBox(), preferredSize: Size.fromHeight(0))
           ),
         ),
       ),

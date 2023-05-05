@@ -1,3 +1,4 @@
+import 'package:e_commerce/Screens/MenuPage.dart';
 import 'package:e_commerce/Screens/MyCart.dart';
 import 'package:e_commerce/Screens/MyProfile.dart';
 import 'package:e_commerce/Screens/SignUp.dart';
@@ -27,6 +28,7 @@ class _DashboardPageState extends State<DashboardPage> {
   final tabs = [
     const HomePage(), // 0
     const MyProfile(),
+    const MenuPage(),
     const AllCategories(),
     const MyCart()
 
@@ -70,8 +72,11 @@ class _DashboardPageState extends State<DashboardPage> {
             BottomNavigationBarItem(
               icon: Icon(CupertinoIcons.profile_circled,size: 30,),
               label: 'Profile',
-
             ),
+              BottomNavigationBarItem(icon: Padding(
+                padding: const EdgeInsets.only(top: 15.0),
+                child: Text("MENU",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),),
+              ),label: ""),
               BottomNavigationBarItem(icon: Icon(CupertinoIcons.search,size: 30,),
               label: 'Search'),
             BottomNavigationBarItem(

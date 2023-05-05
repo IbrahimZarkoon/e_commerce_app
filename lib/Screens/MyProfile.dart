@@ -4,6 +4,7 @@ import 'package:e_commerce/Screens/MyAccount.dart';
 import 'package:e_commerce/Screens/MyOrders.dart';
 import 'package:e_commerce/Screens/PaymentMethods.dart';
 import 'package:e_commerce/Screens/PersonalDetails.dart';
+import 'package:e_commerce/Screens/SearchPage.dart';
 import 'package:e_commerce/Screens/SingleProduct.dart';
 import 'package:e_commerce/Screens/WishlistPage.dart';
 import 'package:e_commerce/Widgets/Drawer.dart';
@@ -46,7 +47,7 @@ class _MyProfileState extends State<MyProfile> {
         automaticallyImplyLeading: false,
         leading: Image.asset("assets/images/logo-removebg-preview.png"),
         leadingWidth: 125,
-        actions: const [
+        actions:  [
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Icon(
@@ -54,11 +55,20 @@ class _MyProfileState extends State<MyProfile> {
               color: Colors.white,
             ),
           ),
-          Padding(
-            padding: EdgeInsets.all(10.0),
-            child: Icon(
-              Icons.search,
-              color: Colors.white,
+          GestureDetector(
+            onTap: ()
+            {
+              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => SearchPage()));
+            },
+            child: Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Hero(
+                tag: "searchbar",
+                child: Icon(
+                  Icons.search,
+                  color: Colors.white,
+                ),
+              ),
             ),
           )
         ],

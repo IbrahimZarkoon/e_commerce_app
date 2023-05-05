@@ -67,7 +67,7 @@ class _SearchPageState extends State<SearchPage> {
                   margin: const EdgeInsets.all(20),
                   padding: const EdgeInsets.only(left: 10, right: 10, bottom: 5,top: 5),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius: BorderRadius.circular(20),
                     color: Colors.white,
                     boxShadow: [
                       BoxShadow(
@@ -105,11 +105,11 @@ class _SearchPageState extends State<SearchPage> {
                               //controller: _searchCon,
                               focusNode: _focusNode,
                               //onChanged: (query) => setState(() {}),
-                              style: const TextStyle(color: Colors.black, height: 1, fontSize: 15),
+                              style: const TextStyle(color: Colors.black, height: 1, fontSize: 14),
                               decoration: const InputDecoration(
                                 //prefixIcon: Icon(Icons.search, color: Color(0xFF5D5D67), size: 23),
                                   hintText: "What are you looking for?",
-                                  hintStyle: TextStyle(color: Color(0xFF8F8F9E), fontSize: 15),
+                                  hintStyle: TextStyle(color: Color(0xFF8F8F9E), fontSize: 13),
                                   border: InputBorder.none),
                             ),
                           )),

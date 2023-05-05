@@ -77,7 +77,7 @@ class _AllCategoriesState extends State<AllCategories> {
 
                         child: Text(
                           "What are you looking for?",
-                          style: const TextStyle(color: Color(0xFF8F8F9E), fontSize: 15),
+                          style: const TextStyle(color: Color(0xFF8F8F9E), fontSize: 13),
                         ),
 
                         // child: TextField(

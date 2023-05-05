@@ -193,7 +193,7 @@ class _Checkout extends State<Checkout> {
                           child: TextButton(
                             style: ButtonStyle(
                               backgroundColor: MaterialStateProperty.all(
-                                  const Color(0xff31ca00)),
+                                  const Color(0xFF0071dc)),
                             ),
                             onPressed: () {
                               next();

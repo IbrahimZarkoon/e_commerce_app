@@ -84,7 +84,7 @@ Widget myAppBar(BuildContext context,Function openDrawer)
         margin: const EdgeInsets.all(20),
         padding: const EdgeInsets.only(left: 10, right: 10, bottom: 5,top: 5),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(20),
           color: Colors.white,
           boxShadow: [
             BoxShadow(
@@ -119,7 +119,7 @@ Widget myAppBar(BuildContext context,Function openDrawer)
 
                   child: Text(
                     "What are you looking for?",
-                    style: const TextStyle(color: Color(0xFF8F8F9E), fontSize: 15),
+                    style: const TextStyle(color: Color(0xFF8F8F9E), fontSize: 13),
                   ),
 
                   // child: TextField(

@@ -145,7 +145,7 @@ class _CartProductConState extends State<CartProductCon> {
 
                             Text(
                               "120.00",
-                              style:  TextStyle(fontWeight: FontWeight.bold, fontSize: 16,color: Colors.green),
+                              style:  TextStyle(fontWeight: FontWeight.bold, fontSize: 14,color: Colors.black.withOpacity(0.7)),
                             ),
                           ],
                         ),

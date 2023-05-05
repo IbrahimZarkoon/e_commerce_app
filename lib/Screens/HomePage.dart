@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:e_commerce/Screens/AllCategories.dart';
 import 'package:e_commerce/Screens/SignIN.dart';
 import 'package:e_commerce/Screens/SignUp.dart';
 import 'package:e_commerce/Screens/SingleCategory.dart';
@@ -53,19 +54,10 @@ class _HomePageState extends State<HomePage> {
             children: [
 
               //Top Deal/Heading
-              Container(
-
-                padding: EdgeInsets.only(top: 10,bottom: 10),
-                color: Color(0xff464141),
-                width: MediaQuery.of(context).size.width,
-                alignment: Alignment.center,
-
-                child: Text("Get 4 hour Click & Collect for Free. T&C's apply",style: TextStyle(color: Colors.white,),),
-              ),
-
+              //
 
               //Latest Deals
-              Headings(context, "Latest Deals"),
+              //Headings(context, "Latest Deals"),
 
               //Latest Deals ListView
               Container(
@@ -73,7 +65,7 @@ class _HomePageState extends State<HomePage> {
 
                 child: ListView.builder(
 
-                  padding: EdgeInsets.only(left: 0,right: 0,top: 5,bottom: 5),
+                  padding: EdgeInsets.only(left: 0,right: 0,top: 0,bottom: 0),
                   physics: BouncingScrollPhysics(),
                     scrollDirection: Axis.horizontal,
                     shrinkWrap: true,
@@ -104,7 +96,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(3),
+                          borderRadius: BorderRadius.circular(0),
                           color: Color(0xffa41818),
                           image: DecorationImage(
                             image: NetworkImage("https://cdn.vectorstock.com/i/preview-1x/19/50/sale-and-discount-promo-background-vector-27471950.jpg"),
@@ -130,11 +122,19 @@ class _HomePageState extends State<HomePage> {
 
                           children: [
 
-                            Text("Ends 26 May",style: TextStyle(color: Colors.white.withOpacity(0.9),fontWeight: FontWeight.bold,fontSize: 13)),
+                            Row(
+                              children: [
+                                Icon(Icons.av_timer_outlined,color: Colors.white,size: 20,),
+
+                                const SizedBox(width: 5,),
+
+                                Text("Ends 26 May",style: TextStyle(color: Colors.white.withOpacity(0.9),fontWeight: FontWeight.bold,fontSize: 13)),
+                              ],
+                            ),
 
                             //const SizedBox(height: 10,),
 
-                            Text("20% OFF SELECTED BIG BRAND TOYS",maxLines: 3,style: TextStyle(color: Colors.white.withOpacity(0.9),fontWeight: FontWeight.bold,fontSize: 30),),
+                            Text("20% OFF SELECTED BIG BRAND TOYS",maxLines: 3,style: TextStyle(color: Colors.white.withOpacity(0.9),fontWeight: FontWeight.bold,fontSize: 26),),
 
                             //const SizedBox(height: 10,),
 
@@ -149,6 +149,9 @@ class _HomePageState extends State<HomePage> {
                 }),
 
               ),
+
+              //Top Categories Container
+              topCategories2(context),
 
 
               // //Top Listview
@@ -317,9 +320,9 @@ class _HomePageState extends State<HomePage> {
               //Top Products Slider
               topProducts(context),
 
-              Headings(context, "Top Categories"),
-
-              topCategories(context),
+              // Headings(context, "Top Categories"),
+              //
+              // topCategories(context),
 
               Headings(context, "Popular items this season"),
 
@@ -411,97 +414,97 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
 
-              Headings(context, "Discount Electronics"),
-
-              Container(
-                decoration: const BoxDecoration(
-                    border: Border(
-                        bottom: BorderSide(
-                            width: 1.5, color: Color(0xfff1f1f1)))),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      height: MediaQuery.of(context).size.height * 0.5,
-                      width: MediaQuery.of(context).size.width,
-                      padding: const EdgeInsets.only(
-                          top: 0, bottom: 20, left: 15, right: 15),
-                      child: GridView.builder(
-                          physics: const NeverScrollableScrollPhysics(),
-                          scrollDirection: Axis.horizontal,
-                          gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
-                                  crossAxisCount: 2,
-                                  mainAxisSpacing: 10,
-                                  crossAxisSpacing: 10,
-                                  childAspectRatio: 1.085),
-                          padding: const EdgeInsets.all(0),
-                          itemCount: 4,
-                          itemBuilder: (BuildContext context, index) {
-                            return Container(
-                              width: MediaQuery.of(context).size.width / 2,
-                              height:
-                                  MediaQuery.of(context).size.height * 0.25,
-                              margin: const EdgeInsets.all(3),
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  image: const DecorationImage(
-                                      image: NetworkImage(
-                                          "https://m.media-amazon.com/images/I/61-PblYntsL._AC_UY545_QL65_.jpg"),
-                                      fit: BoxFit.scaleDown),
-                                  borderRadius: BorderRadius.circular(8),
-                                  boxShadow: [
-                                    BoxShadow(
-                                        color: Colors.black.withOpacity(0.15),
-                                        offset: const Offset(0, 0),
-                                        spreadRadius: 1,
-                                        blurRadius: 1.5)
-                                  ]),
-                            );
-                          }),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 20),
-                      child: SizedBox(
-                        width: MediaQuery.of(context).size.width,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Container(
-                              padding: const EdgeInsets.only(
-                                  top: 0, bottom: 0, left: 20, right: 5),
-                              // decoration: BoxDecoration(
-                              //     borderRadius: BorderRadius.circular(7),
-                              //     color: const Color(0xff9933ff),
-                              //     boxShadow: [
-                              //       BoxShadow(
-                              //           color: Colors.black.withOpacity(0.15),
-                              //           blurRadius: 5,
-                              //           offset: const Offset(0, 0))
-                              //     ]),
-                              margin: const EdgeInsets.only(
-                                  top: 0, right: 0, bottom: 0),
-                              child: const Text(
-                                "See more",
-                                style: TextStyle(
-                                    //fontFamily: "Fira-SemiBold",
-                                    color: Color(0xff00854e),
-                                    fontSize: 13),
-                                softWrap: true,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ),
-
-                            // const Icon(Icons.keyboard_double_arrow_right_outlined,size: 20,color: Color(
-                            //     0xff00854e),)
-                          ],
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ),
+              // Headings(context, "Discount Electronics"),
+              //
+              // Container(
+              //   decoration: const BoxDecoration(
+              //       border: Border(
+              //           bottom: BorderSide(
+              //               width: 1.5, color: Color(0xfff1f1f1)))),
+              //   child: Column(
+              //     crossAxisAlignment: CrossAxisAlignment.start,
+              //     children: [
+              //       Container(
+              //         height: MediaQuery.of(context).size.height * 0.5,
+              //         width: MediaQuery.of(context).size.width,
+              //         padding: const EdgeInsets.only(
+              //             top: 0, bottom: 20, left: 15, right: 15),
+              //         child: GridView.builder(
+              //             physics: const NeverScrollableScrollPhysics(),
+              //             scrollDirection: Axis.horizontal,
+              //             gridDelegate:
+              //                 const SliverGridDelegateWithFixedCrossAxisCount(
+              //                     crossAxisCount: 2,
+              //                     mainAxisSpacing: 10,
+              //                     crossAxisSpacing: 10,
+              //                     childAspectRatio: 1.085),
+              //             padding: const EdgeInsets.all(0),
+              //             itemCount: 4,
+              //             itemBuilder: (BuildContext context, index) {
+              //               return Container(
+              //                 width: MediaQuery.of(context).size.width / 2,
+              //                 height:
+              //                     MediaQuery.of(context).size.height * 0.25,
+              //                 margin: const EdgeInsets.all(3),
+              //                 decoration: BoxDecoration(
+              //                     color: Colors.white,
+              //                     image: const DecorationImage(
+              //                         image: NetworkImage(
+              //                             "https://m.media-amazon.com/images/I/61-PblYntsL._AC_UY545_QL65_.jpg"),
+              //                         fit: BoxFit.scaleDown),
+              //                     borderRadius: BorderRadius.circular(8),
+              //                     boxShadow: [
+              //                       BoxShadow(
+              //                           color: Colors.black.withOpacity(0.15),
+              //                           offset: const Offset(0, 0),
+              //                           spreadRadius: 1,
+              //                           blurRadius: 1.5)
+              //                     ]),
+              //               );
+              //             }),
+              //       ),
+              //       Padding(
+              //         padding: const EdgeInsets.only(bottom: 20),
+              //         child: SizedBox(
+              //           width: MediaQuery.of(context).size.width,
+              //           child: Row(
+              //             mainAxisAlignment: MainAxisAlignment.start,
+              //             crossAxisAlignment: CrossAxisAlignment.center,
+              //             children: [
+              //               Container(
+              //                 padding: const EdgeInsets.only(
+              //                     top: 0, bottom: 0, left: 20, right: 5),
+              //                 // decoration: BoxDecoration(
+              //                 //     borderRadius: BorderRadius.circular(7),
+              //                 //     color: const Color(0xff9933ff),
+              //                 //     boxShadow: [
+              //                 //       BoxShadow(
+              //                 //           color: Colors.black.withOpacity(0.15),
+              //                 //           blurRadius: 5,
+              //                 //           offset: const Offset(0, 0))
+              //                 //     ]),
+              //                 margin: const EdgeInsets.only(
+              //                     top: 0, right: 0, bottom: 0),
+              //                 child: const Text(
+              //                   "See more",
+              //                   style: TextStyle(
+              //                       //fontFamily: "Fira-SemiBold",
+              //                       color: Color(0xff00854e),
+              //                       fontSize: 13),
+              //                   softWrap: true,
+              //                   overflow: TextOverflow.ellipsis,
+              //                 ),
+              //               ),
+              //
+              //               // const Icon(Icons.keyboard_double_arrow_right_outlined,size: 20,color: Color(
+              //               //     0xff00854e),)
+              //             ],
+              //           ),
+              //         ),
+              //       )
+              //     ],
+              //   ),
+              // ),
 
               Headings(context, "Tablets under \$100"),
 
@@ -1262,10 +1265,459 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  Widget topCategories2(BuildContext context)
+  {
+    return Container(
+      height: MediaQuery.of(context).size.height*0.55,
+      padding: EdgeInsets.all(15),
+      color: Color(0xffeef2f5),
+
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+
+        children: [
+
+          //1st Column
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+
+              children: [
+
+                //1st Category
+                Expanded(
+                    flex: 2,
+                    child: GestureDetector(
+                      onTap: ()
+                      {
+                        Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => SingleCategory(tag: "TC1")));
+                      },
+                      child: Stack(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.only(top: 10,left: 10,right: 10),
+                            margin: EdgeInsets.only(right: 10,bottom: 10),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(5),
+                                boxShadow:[
+                                  BoxShadow(
+                                      color: Colors.black.withOpacity(0.1),
+                                      blurRadius: 1,
+                                      spreadRadius: 1,
+                                      offset: Offset(0,0)
+                                  )
+                                ]
+                            ),
+
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+
+                              children: [
+
+                                Text("Smartphones",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
+
+                                const SizedBox(height: 5,),
+
+                                Text("Order from your favourite brand and what ever your like",style: TextStyle(fontSize: 12),maxLines: 2,overflow: TextOverflow.ellipsis,)
+
+                              ],
+                            ),
+
+                          ),
+
+                          Positioned(
+                              bottom: 12,
+                              left: 10,right: 12,
+                              child: Hero(
+                                tag: "TC1",
+                                child: Container(
+                                  width: 75,height: 150,
+                                  decoration: BoxDecoration(
+                                      color: Colors.transparent,
+                                      image: DecorationImage(image: NetworkImage("https://imageio.forbes.com/specials-images/imageserve/60e48ef5423e512de205d104/Apple-iPhone-12-Pro--Pacific-Blue-/960x0.jpg?format=jpg&width=960"),
+                                          colorFilter: ColorFilter.mode(Colors.white, BlendMode.dstIn),
+                                          fit: BoxFit.cover)
+                                  ),
+                                ),
+                              ))
+                        ],
+                      ),
+                    )),
+
+                //2nd Category
+                GestureDetector(
+                  onTap: ()
+                  {
+                    Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => SingleCategory(tag: "TC2")));
+                  },
+                  child: Stack(
+                      children:[
+
+                        Container(
+                          margin: EdgeInsets.only(right: 10,bottom: 10),
+                          padding: EdgeInsets.only(top: 10,left: 10,right: 90,bottom: 10),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(5),
+                              boxShadow:[
+                                BoxShadow(
+                                    color: Colors.black.withOpacity(0.1),
+                                    blurRadius: 1,
+                                    spreadRadius: 1,
+                                    offset: Offset(0,0)
+                                )
+                              ]
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+
+                            children: [
+
+                              Text("Smartphone",maxLines: 1,overflow: TextOverflow.ellipsis,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
+
+                              const SizedBox(height: 5,),
+
+                              Text("Enjoy up to 20% off and what ever your like",style: TextStyle(fontSize: 12),maxLines: 2,overflow: TextOverflow.ellipsis,)
+
+                            ],
+                          ),
+                        ),
+
+                        Positioned(
+                            bottom: 12,
+                            right: 12,
+                            child: Hero(
+                              tag: "TC2",
+                              child: Container(
+                                width: 90,height: 75,
+                                decoration: BoxDecoration(
+                                    color: Colors.transparent,
+                                    image: DecorationImage(image: NetworkImage("https://imageio.forbes.com/specials-images/imageserve/60e48ef5423e512de205d104/Apple-iPhone-12-Pro--Pacific-Blue-/960x0.jpg?format=jpg&width=960"),
+                                      fit: BoxFit.cover,)
+                                ),
+                              ),
+                            ))
+                      ]
+                  ),
+                ),
+
+                //3rd Category
+                GestureDetector(
+                  onTap: ()
+                  {
+                    Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => SingleCategory(tag: "TC3")));
+                  },
+                  child: Stack(
+                      children:[
+
+                        Container(
+                          margin: EdgeInsets.only(right: 10,bottom: 10),
+                          padding: EdgeInsets.only(top: 10,left: 10,right: 90,bottom: 10),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(5),
+                              boxShadow:[
+                                BoxShadow(
+                                    color: Colors.black.withOpacity(0.1),
+                                    blurRadius: 1,
+                                    spreadRadius: 1,
+                                    offset: Offset(0,0)
+                                )
+                              ]
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+
+                            children: [
+
+                              Text("Food ",maxLines: 1,overflow: TextOverflow.ellipsis,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
+
+                              const SizedBox(height: 5,),
+
+                              Text("Deals up to 40% off and what ever your like",style: TextStyle(fontSize: 12),maxLines: 2,overflow: TextOverflow.ellipsis,)
+
+                            ],
+                          ),
+                        ),
+
+                        Positioned(
+                            bottom: 10,
+                            right: 13,
+                            child: Hero(
+                              tag: "TC3",
+                              child: Container(
+                                width: 90,height: 75,
+                                decoration: BoxDecoration(
+                                    color: Colors.transparent,
+                                    image: DecorationImage(image: AssetImage("assets/images/Italy_pasta-removebg-preview.png"),
+                                      fit: BoxFit.cover,)
+                                ),
+                              ),
+                            ))
+                      ]
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          //2nd Column
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+
+              children: [
+
+                //4th Category
+                Expanded(
+                    flex:2,
+                    child: GestureDetector(
+                      onTap: ()
+                      {
+                        Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => SingleCategory(tag: "TC4")));
+                      },
+                      child: Stack(
+                          children: [
+
+                            Container(
+                              padding: EdgeInsets.only(top: 10,left: 10,right: 10),
+                              margin: EdgeInsets.only(right: 10,bottom: 10),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(5),
+                                boxShadow:[
+                                  BoxShadow(
+                                      color: Colors.black.withOpacity(0.1),
+                                      blurRadius: 1,
+                                      spreadRadius: 1,
+                                      offset: Offset(0,0)
+                                  )
+                                ],
+
+                              ),
+
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+
+                                children: [
+
+                                  Text("Beauty",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
+
+                                  const SizedBox(height: 5,),
+
+                                  Text("Discover the latest trends and techniques in skincare, makeup, haircare, and more to help you look and feel your best.",style: TextStyle(fontSize: 12),maxLines: 2,overflow: TextOverflow.ellipsis,)
+
+                                ],
+                              ),
+
+                            ),
+
+                            Positioned(
+                                bottom: 10,
+                                right: 13,
+                                child: Hero(
+                                  tag: "TC4",
+                                  child: Container(
+                                    width: 100,height: 75,
+                                    decoration: BoxDecoration(
+                                        color: Colors.transparent,
+                                        image: DecorationImage(image: AssetImage("assets/images/Italy_pasta-removebg-preview.png"),
+                                          fit: BoxFit.cover,)
+                                    ),
+                                  ),
+                                ))
+
+                          ]
+                      ),
+                    )),
+
+                //5th Category
+                GestureDetector(
+                  onTap: ()
+                  {
+                    Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => SingleCategory(tag: "TC5")));
+                  },
+                  child: Stack(
+                      children: [Container(
+                        padding: EdgeInsets.only(top: 10,left: 10,bottom: 10),
+                        margin: EdgeInsets.only(right: 10,bottom: 10),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(5),
+                            boxShadow:[
+                              BoxShadow(
+                                  color: Colors.black.withOpacity(0.1),
+                                  blurRadius: 1,
+                                  spreadRadius: 1,
+                                  offset: Offset(0,0)
+                              )
+                            ]
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+
+                          children: [
+
+                            Text("Furniture",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
+
+                            const SizedBox(height: 5,),
+
+                            Text("Everyday\nessentials",style: TextStyle(fontSize: 12),maxLines: 2,overflow: TextOverflow.ellipsis,)
+
+                          ],
+                        ),
+                      ),
+
+
+                        Positioned(
+                            bottom: 10,
+                            right: 13,
+                            child: Hero(
+                              tag: "TC5",
+                              child: Container(
+                                width: 100,height: 75,
+                                decoration: BoxDecoration(
+                                    color: Colors.transparent,
+                                    image: DecorationImage(image: AssetImage("assets/images/Italy_pasta-removebg-preview.png"),
+                                      fit: BoxFit.cover,)
+                                ),
+                              ),
+                            ))
+                      ]
+                  ),
+                ),
+
+                //6th Category
+                GestureDetector(
+                  onTap: ()
+                  {
+                    Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => SingleCategory(tag: "TC6")));
+                  },
+                  child: Stack(
+                      children: [Container(
+                        padding: EdgeInsets.only(top: 10,left: 10,bottom: 10,right: 90),
+                        margin: EdgeInsets.only(right: 10,bottom: 10),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(5),
+                            boxShadow:[
+                              BoxShadow(
+                                  color: Colors.black.withOpacity(0.1),
+                                  blurRadius: 1,
+                                  spreadRadius: 1,
+                                  offset: Offset(0,0)
+                              )
+                            ]
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+
+                          children: [
+
+                            Text("Books",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
+
+                            const SizedBox(height: 5,),
+
+                            Text("Read out and save 25%\n",style: TextStyle(fontSize: 12),maxLines: 2,overflow: TextOverflow.ellipsis,)
+
+                          ],
+                        ),
+                      ),
+
+                        Positioned(
+                            bottom: 12,
+                            right: 12,
+                            child: Hero(
+                              tag: "TC6",
+                              child: Container(
+                                width: 90,height: 75,
+                                decoration: BoxDecoration(
+                                    color: Colors.transparent,
+                                    image: DecorationImage(image: NetworkImage("https://imageio.forbes.com/specials-images/imageserve/60e48ef5423e512de205d104/Apple-iPhone-12-Pro--Pacific-Blue-/960x0.jpg?format=jpg&width=960"),
+                                      fit: BoxFit.cover,)
+                                ),
+                              ),
+                            ))
+
+                      ]
+                  ),
+                ),
+
+                //View All Categories
+                GestureDetector(
+                  onTap: ()
+                  {
+                    Navigator.push(context, CupertinoPageRoute(builder: (BuildContext context) => AllCategories()));
+                  },
+                  child: Stack(
+                      children: [Container(
+                        padding: EdgeInsets.only(top: 10,left: 10,bottom: 10),
+                        margin: EdgeInsets.only(right: 10,bottom: 10),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(5),
+                            boxShadow:[
+                              BoxShadow(
+                                  color: Colors.black.withOpacity(0.1),
+                                  blurRadius: 1,
+                                  spreadRadius: 1,
+                                  offset: Offset(0,0)
+                              )
+                            ]
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+
+                          children: [
+
+                            Text("View all",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
+
+                            const SizedBox(height: 5,),
+
+                            Text("Exotic\nCategories",style: TextStyle(fontSize: 12),maxLines: 2,overflow: TextOverflow.ellipsis,)
+
+                          ],
+                        ),
+                      ),
+
+                        Positioned(
+                            bottom: 12,
+                            right: 12,
+                            child: Container(
+                              width: 90,height: 75,
+                              decoration: BoxDecoration(
+                                color: Colors.transparent,
+
+                              ),
+                              child: Transform(
+                                  alignment: Alignment.center,
+                                  transform: Matrix4.identity()..scale(-1.0, 1.0, 1.0),
+                                  child: Icon(Icons.more_outlined,size: 40,color: Colors.black.withOpacity(0.75),)),
+                            ))
+                      ]
+                  ),
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
   Widget topProducts(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(bottom: 0),
-      height: MediaQuery.of(context).size.height * 0.26,
+      height: MediaQuery.of(context).size.height * 0.2,
       //color: Colors.red,
       child: ListView(
         padding: const EdgeInsets.only(left: 15, right: 15, bottom: 0, top: 0),
@@ -1307,9 +1759,9 @@ class _HomePageState extends State<HomePage> {
                       )),
                   Positioned(
                       top: 0,
-                      left: 0,
-                      right: 0,
-                      bottom: 60,
+                      left: 10,
+                      right: 10,
+                      bottom: 50,
                       child: Hero(
                         tag: "TP1",
                         child: Container(
@@ -1359,9 +1811,9 @@ class _HomePageState extends State<HomePage> {
                       )),
                   Positioned(
                       top: 0,
-                      left: 0,
-                      right: 0,
-                      bottom: 60,
+                      left: 10,
+                      right: 10,
+                      bottom: 50,
                       child: Hero(
                         tag: "TP2",
                         child: Container(
@@ -1413,7 +1865,7 @@ class _HomePageState extends State<HomePage> {
                       top: 0,
                       left: 10,
                       right: 10,
-                      bottom: 60,
+                      bottom: 50,
                       child: Hero(
                         tag: "TP3",
                         child: Container(
