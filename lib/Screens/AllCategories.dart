@@ -33,7 +33,7 @@ class _AllCategoriesState extends State<AllCategories> {
           title: GestureDetector(
             onTap: ()
             {
-              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => SearchPage()));
+              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => SearchPage(tag: "allcat",)));
             },
             child: Container(
               height: 40,
@@ -58,7 +58,7 @@ class _AllCategoriesState extends State<AllCategories> {
                 children: [
 
                   Hero(
-                    tag: "searchbar",
+                    tag: "allcat",
 
                     child: Container(
                         padding: const EdgeInsets.only(left: 5,right: 0,top: 0,bottom: 0),

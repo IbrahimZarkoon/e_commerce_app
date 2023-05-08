@@ -45,7 +45,9 @@ class _MyProfileState extends State<MyProfile> {
         elevation: 0,
         backgroundColor: Color(0xFF0071dc),
         automaticallyImplyLeading: false,
-        leading: Image.asset("assets/images/logo-removebg-preview.png"),
+        title: Container(
+            width: MediaQuery.of(context).size.width*0.3,
+            child: Image.asset("assets/images/logo-removebg-preview.png",fit: BoxFit.contain,)),
         leadingWidth: 125,
         actions:  [
           Padding(
@@ -58,12 +60,12 @@ class _MyProfileState extends State<MyProfile> {
           GestureDetector(
             onTap: ()
             {
-              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => SearchPage()));
+              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => SearchPage(tag: "profile",)));
             },
             child: Padding(
               padding: EdgeInsets.all(10.0),
               child: Hero(
-                tag: "searchbar",
+                tag: "profile",
                 child: Icon(
                   Icons.search,
                   color: Colors.white,
@@ -341,7 +343,27 @@ class _MyProfileState extends State<MyProfile> {
                           return GestureDetector(
                             onTap: ()
                             {
-                              Navigator.push(context, MaterialPageRoute(builder: (_) => SingleProduct(tag: "wish$index", productid: "productid")));
+                              showModalBottomSheet(context: context,
+                                  isScrollControlled: true,
+                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(topLeft: Radius.circular(20),topRight: Radius.circular(20)),),
+                                  builder: (BuildContext context)
+                                  {
+                                    return Container(height: MediaQuery.of(context).size.height*0.85,
+                                      decoration: BoxDecoration(
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: Colors.black.withOpacity(0.4),
+                                              offset: Offset(0,-10),
+                                              blurRadius: 15,
+                                              spreadRadius: 1,
+                                            )
+                                          ],
+                                          borderRadius: BorderRadius.only(topLeft: Radius.circular(20),topRight: Radius.circular(20)),
+                                          color: Colors.white
+                                      ),
+                                      child: SingleProduct(tag: 'wish$index', productid: 'wishlist',),
+                                    );
+                                  });
                             },
                             child: Stack(
                                 children: [

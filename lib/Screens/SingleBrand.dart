@@ -9,18 +9,19 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import '../Widgets/PriceRangeFilter.dart';
 import 'SearchPage.dart';
 
-class SingleCategory extends StatefulWidget {
-  const SingleCategory({Key? key, required this.tag}) : super(key: key);
+class SingleBrand extends StatefulWidget {
+  const SingleBrand({Key? key, required this.tag, required this.name}) : super(key: key);
 
   final String tag;
+  final String name;
 
   @override
-  State<SingleCategory> createState() => _SingleCategoryState();
+  State<SingleBrand> createState() => _SingleBrandState();
 }
 
-class _SingleCategoryState extends State<SingleCategory> {
+class _SingleBrandState extends State<SingleBrand> {
   String _selectedSize = "Sort By";
-  
+
   bool searchbar = false;
 
   Color inStoreColor = const Color(0xfff3f5f7);
@@ -68,7 +69,7 @@ class _SingleCategoryState extends State<SingleCategory> {
             leading: const BackButton(
               color: Colors.white,
             ),
-            leadingWidth: 50,
+            leadingWidth: 10,
             centerTitle: true,
             title: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -77,9 +78,9 @@ class _SingleCategoryState extends State<SingleCategory> {
                   tag: widget.tag,
 
                   child: Container(
-                    margin: EdgeInsets.only(left: 35),
+                    //margin: EdgeInsets.only(left: 75),
                     height: kToolbarHeight,
-                    width: MediaQuery.of(context).size.width *0.3,
+                    width: MediaQuery.of(context).size.width *0.4,
                     decoration: const BoxDecoration(image: DecorationImage(image: AssetImage("assets/images/logo-removebg-preview.png"),fit: BoxFit.contain)),),
                 ),
               ],
@@ -225,7 +226,7 @@ class _SingleCategoryState extends State<SingleCategory> {
 
             //Filter Container
 
-            _isVisible? Headings(context, "Jeans") : const SizedBox(),
+            _isVisible? Headings(context, widget.name) : const SizedBox(),
 
 
             _isVisible?
@@ -233,7 +234,7 @@ class _SingleCategoryState extends State<SingleCategory> {
               height: MediaQuery.of(context).size.height*0.065,
 
               decoration: BoxDecoration(
-                border: Border(bottom: BorderSide(color: Colors.black.withOpacity(0.1)))
+                  border: Border(bottom: BorderSide(color: Colors.black.withOpacity(0.1)))
               ),
               child: ListView(
                 physics: const BouncingScrollPhysics(),
@@ -332,7 +333,7 @@ class _SingleCategoryState extends State<SingleCategory> {
                         context: context,
                         builder: (BuildContext context) {
                           return  Container(
-                            height: MediaQuery.of(context).size.height*0.35,
+                              height: MediaQuery.of(context).size.height*0.35,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(15),
                               ),
@@ -361,9 +362,9 @@ class _SingleCategoryState extends State<SingleCategory> {
 
                           Container(
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
-                                color: const Color(0xfff3f5f7),
-                                border: Border.all(color: Colors.black.withOpacity(0.5))
+                                  borderRadius: BorderRadius.circular(50),
+                                  color: const Color(0xfff3f5f7),
+                                  border: Border.all(color: Colors.black.withOpacity(0.5))
                                 // boxShadow: [
                                 //   BoxShadow(
                                 //     color: Colors.black.withOpacity(0.5),
@@ -545,37 +546,37 @@ class _SingleCategoryState extends State<SingleCategory> {
                       "ZERRES",
                       "Cora Crop Jeans Gina Wellness Lightweight Trousers Gina Wellness Lightweight Trousers Gina Wellness Lightweight Trousers",
                       "79.00",
-                    true, "P1"
+                      true, "P1"
                   ),
                   productsContainer2(
                       "https://images.salesfire.co.uk/49ae2095-f508-4fc4-96cc-a58e99bed522/600x600/4247/r-contain/c-FFFFFFFF/1983395332.webp",
                       "ZERRES",
                       "Gina Wellness Lightweight Trousers",
                       "89.00",
-                    false, "P2"
-                      ),
+                      false, "P2"
+                  ),
                   productsContainer2(
 
                       "https://www.luxury-legs.com/images/zerres-carla-snake-trouser-p4358-209223_medium.jpg",
                       "ZERRES",
                       "Carla Snake Trousers",
                       "99.00",
-                    true, "P3"
-                     ),
+                      true, "P3"
+                  ),
                   productsContainer2(
                       "https://www.luxury-legs.com/images/zerres-sarah-fine-ribbed-velvet-jeans-p4248-194915_medium.jpg",
                       "ZERRES",
                       "Sarah Fine Ribbed Velvet Jeans",
                       "95.00",
-                    true, "P4"
-                     ),
+                      true, "P4"
+                  ),
                   productsContainer2(
                       "https://www.luxury-legs.com/images/zerres-sarah-flower-capri-p4476-209249_medium.jpg",
                       "ZERRES",
                       "Sarah Flower Capri",
                       "109.00",
-                    false, "P5"
-                     ),
+                      false, "P5"
+                  ),
                 ],
               ),
             ),
@@ -586,36 +587,36 @@ class _SingleCategoryState extends State<SingleCategory> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
 
-                    Container(
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.white.withOpacity(0.5),
-                      ),
-                      child: IconButton(
-                        icon: const Icon(Icons.arrow_back_ios_rounded, color: Colors.black,size: 15,),
-                        onPressed: () {
-
-                        },
-                      ),
+                  Container(
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.white.withOpacity(0.5),
                     ),
+                    child: IconButton(
+                      icon: const Icon(Icons.arrow_back_ios_rounded, color: Colors.black,size: 15,),
+                      onPressed: () {
+
+                      },
+                    ),
+                  ),
                   const SizedBox(width: 8.0),
 
-                    const Text("1"),
+                  const Text("1"),
 
-                    const SizedBox(width: 8,),
+                  const SizedBox(width: 8,),
 
-                    Container(
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.white.withOpacity(0.5),
-                      ),
-                      child: IconButton(
-                        icon: const Icon(Icons.arrow_forward_ios_rounded, color: Colors.black,size: 15,),
-                        onPressed: () {
-
-                        },
-                      ),
+                  Container(
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.white.withOpacity(0.5),
                     ),
+                    child: IconButton(
+                      icon: const Icon(Icons.arrow_forward_ios_rounded, color: Colors.black,size: 15,),
+                      onPressed: () {
+
+                      },
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -743,23 +744,23 @@ class _SingleCategoryState extends State<SingleCategory> {
                   children: [
                     isFirst
                         ? Container(
-                          margin: const EdgeInsets.only(right: 5),
-                          width: 20,
-                          height: 20,
-                          decoration: const BoxDecoration(
-                              image: DecorationImage(
-                                  image: NetworkImage(
-                                      "https://www.luxury-legs.com/images/attributes/1662978584-47028100.jpg"))),
-                        )
+                      margin: const EdgeInsets.only(right: 5),
+                      width: 20,
+                      height: 20,
+                      decoration: const BoxDecoration(
+                          image: DecorationImage(
+                              image: NetworkImage(
+                                  "https://www.luxury-legs.com/images/attributes/1662978584-47028100.jpg"))),
+                    )
                         : Container(
-                            margin: const EdgeInsets.only(right: 5),
-                            width: 20,
-                            height: 20,
-                            decoration: const BoxDecoration(
-                                image: DecorationImage(
-                                    image: NetworkImage(
-                                        "https://www.luxury-legs.com/images/attributes/1662978584-47028100.jpg"))),
-                          ),
+                      margin: const EdgeInsets.only(right: 5),
+                      width: 20,
+                      height: 20,
+                      decoration: const BoxDecoration(
+                          image: DecorationImage(
+                              image: NetworkImage(
+                                  "https://www.luxury-legs.com/images/attributes/1662978584-47028100.jpg"))),
+                    ),
                     Container(
                       margin: const EdgeInsets.only(right: 5),
                       width: 20,
@@ -861,17 +862,17 @@ class _SingleCategoryState extends State<SingleCategory> {
           ),
           New
               ? Positioned(
-                  top: 0,
-                  left: 0,
-                  child: Container(
-                    padding: const EdgeInsets.only(top: 5, bottom: 5),
-                    decoration: const BoxDecoration(color: Color(0xffeeeeee)),
-                    alignment: Alignment.center,
-                    child: const Text(
-                      "New Arrivals",
-                      style: TextStyle(fontSize: 12),
-                    ),
-                  ))
+              top: 0,
+              left: 0,
+              child: Container(
+                padding: const EdgeInsets.only(top: 5, bottom: 5),
+                decoration: const BoxDecoration(color: Color(0xffeeeeee)),
+                alignment: Alignment.center,
+                child: const Text(
+                  "New Arrivals",
+                  style: TextStyle(fontSize: 12),
+                ),
+              ))
               : const SizedBox(),
         ]),
       ),
@@ -879,16 +880,16 @@ class _SingleCategoryState extends State<SingleCategory> {
   }
 
   Widget CategoryProductsCon(
-    BuildContext context,
-    String I1,
-    String T1,
-    String C1,
-    String P1,
-    String I2,
-    String T2,
-    String C2,
-    String P2,
-  ) {
+      BuildContext context,
+      String I1,
+      String T1,
+      String C1,
+      String P1,
+      String I2,
+      String T2,
+      String C2,
+      String P2,
+      ) {
     return Container(
       margin: const EdgeInsets.only(bottom: 25),
       child: Row(
@@ -1200,21 +1201,21 @@ class _SingleCategoryState extends State<SingleCategory> {
           ),
           builder: (BuildContext context) {
             return Container(
-              height: MediaQuery.of(context).size.height * 0.85,
-              decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.4),
-                      offset: const Offset(0, -10),
-                      blurRadius: 15,
-                      spreadRadius: 1,
-                    )
-                  ],
-                  borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(20),
-                      topRight: Radius.circular(20)),
-                  color: Colors.white),
-              child:  SingleProduct(tag: tag, productid: "1")
+                height: MediaQuery.of(context).size.height * 0.85,
+                decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.4),
+                        offset: const Offset(0, -10),
+                        blurRadius: 15,
+                        spreadRadius: 1,
+                      )
+                    ],
+                    borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        topRight: Radius.circular(20)),
+                    color: Colors.white),
+                child:  SingleProduct(tag: tag, productid: "1")
             );
           }),
 
@@ -1301,7 +1302,7 @@ class _SingleCategoryState extends State<SingleCategory> {
                         margin: const EdgeInsets.only(left: 3,top: 3),
                         padding: const EdgeInsets.only(left: 10,right: 10,top: 5, bottom: 5),
                         decoration:  BoxDecoration(color: const Color(0xFFfc9038),
-                        borderRadius: BorderRadius.circular(20)),
+                            borderRadius: BorderRadius.circular(20)),
                         alignment: Alignment.center,
                         child: const Text(
                           "New Arrivals",
@@ -1315,30 +1316,30 @@ class _SingleCategoryState extends State<SingleCategory> {
             //const SizedBox(height: 10,),
 
             Padding(
-        padding: const EdgeInsets.only(left: 0,right: 10),
+              padding: const EdgeInsets.only(left: 0,right: 10),
 
-        child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children:  [
-              const Text(
-                "£",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children:  [
+                  const Text(
+                    "£",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+
+                  Text(
+                    price,
+                    style: const TextStyle(fontSize: 14,fontWeight: FontWeight.bold),
+                  ),
+
+                  const SizedBox(width: 5,),
+
+                  Text(
+                    "£100.00",
+                    style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold,color: Colors.black.withOpacity(0.4),decoration: TextDecoration.lineThrough),
+                  ),
+                ],
               ),
-
-              Text(
-                price,
-                style: const TextStyle(fontSize: 14,fontWeight: FontWeight.bold),
-              ),
-
-               const SizedBox(width: 5,),
-
-               Text(
-                "£100.00",
-                style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold,color: Colors.black.withOpacity(0.4),decoration: TextDecoration.lineThrough),
-              ),
-            ],
-          ),
-      ),
+            ),
 
             Flexible(
               child: Column(
@@ -1450,7 +1451,7 @@ class _SingleCategoryState extends State<SingleCategory> {
                         ),
 
                         const SizedBox(width: 2,),
-                        
+
                         Text("332",style: TextStyle(color: Colors.black.withOpacity(0.4),fontSize: 11),)
 
                       ],
@@ -1469,8 +1470,8 @@ class _SingleCategoryState extends State<SingleCategory> {
                         Container(
                           padding: const EdgeInsets.only(left: 5,right: 5,bottom: 5,top: 5),
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(2),
-                            color: const Color(0xFF0071dc)
+                              borderRadius: BorderRadius.circular(2),
+                              color: const Color(0xFF0071dc)
                           ),
                           child: const Text("Shipping",style: TextStyle(color: Color(
                               0xffffffff),fontSize: 9),),

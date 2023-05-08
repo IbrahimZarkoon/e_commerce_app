@@ -33,11 +33,12 @@ class _SortandFilterState extends State<SortandFilter> {
   bool instore = false;
   bool scheduledorder = false;
 
+  double _top = 0;
+
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Container(
+    return Stack(children: [
+      Container(
         padding: EdgeInsets.only(left: 15, right: 15, top: 15),
         height: MediaQuery.of(context).size.height * 0.65,
         width: MediaQuery.of(context).size.width,
@@ -60,8 +61,6 @@ class _SortandFilterState extends State<SortandFilter> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-
-
               //Close Row
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -116,7 +115,8 @@ class _SortandFilterState extends State<SortandFilter> {
                             });
                           },
                           child: Padding(
-                            padding: const EdgeInsets.only(bottom: 10, right: 20),
+                            padding:
+                                const EdgeInsets.only(bottom: 10, right: 20),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -152,7 +152,8 @@ class _SortandFilterState extends State<SortandFilter> {
                             });
                           },
                           child: Padding(
-                            padding: const EdgeInsets.only(bottom: 10, right: 20),
+                            padding:
+                                const EdgeInsets.only(bottom: 10, right: 20),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -188,7 +189,8 @@ class _SortandFilterState extends State<SortandFilter> {
                             });
                           },
                           child: Padding(
-                            padding: const EdgeInsets.only(bottom: 10, right: 20),
+                            padding:
+                                const EdgeInsets.only(bottom: 10, right: 20),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -224,7 +226,8 @@ class _SortandFilterState extends State<SortandFilter> {
                             });
                           },
                           child: Padding(
-                            padding: const EdgeInsets.only(bottom: 10, right: 20),
+                            padding:
+                                const EdgeInsets.only(bottom: 10, right: 20),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -271,7 +274,8 @@ class _SortandFilterState extends State<SortandFilter> {
                             setState(() {});
                           },
                           child: Padding(
-                            padding: const EdgeInsets.only(bottom: 10, right: 20),
+                            padding:
+                                const EdgeInsets.only(bottom: 10, right: 20),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -316,7 +320,8 @@ class _SortandFilterState extends State<SortandFilter> {
                             });
                           },
                           child: Padding(
-                            padding: const EdgeInsets.only(bottom: 10, right: 20),
+                            padding:
+                                const EdgeInsets.only(bottom: 10, right: 20),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -383,7 +388,8 @@ class _SortandFilterState extends State<SortandFilter> {
                             });
                           },
                           child: Padding(
-                            padding: const EdgeInsets.only(bottom: 10, right: 20),
+                            padding:
+                                const EdgeInsets.only(bottom: 10, right: 20),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -450,7 +456,8 @@ class _SortandFilterState extends State<SortandFilter> {
                             });
                           },
                           child: Padding(
-                            padding: const EdgeInsets.only(bottom: 10, right: 20),
+                            padding:
+                                const EdgeInsets.only(bottom: 10, right: 20),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -517,7 +524,8 @@ class _SortandFilterState extends State<SortandFilter> {
                             });
                           },
                           child: Padding(
-                            padding: const EdgeInsets.only(bottom: 10, right: 20),
+                            padding:
+                                const EdgeInsets.only(bottom: 10, right: 20),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -593,12 +601,12 @@ class _SortandFilterState extends State<SortandFilter> {
                         GestureDetector(
                           onTap: () {
                             setState(() {
-
                               under10 = !under10;
                             });
                           },
                           child: Padding(
-                            padding: const EdgeInsets.only(bottom: 10, right: 20),
+                            padding:
+                                const EdgeInsets.only(bottom: 10, right: 20),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -608,7 +616,8 @@ class _SortandFilterState extends State<SortandFilter> {
                                     Icon(
                                       under10
                                           ? Icons.check_box
-                                          : Icons.check_box_outline_blank_outlined,
+                                          : Icons
+                                              .check_box_outline_blank_outlined,
                                       size: 22,
                                       color: Colors.black.withOpacity(0.6),
                                     ),
@@ -638,12 +647,12 @@ class _SortandFilterState extends State<SortandFilter> {
                         GestureDetector(
                           onTap: () {
                             setState(() {
-
                               under50 = !under50;
                             });
                           },
                           child: Padding(
-                            padding: const EdgeInsets.only(bottom: 10, right: 20),
+                            padding:
+                                const EdgeInsets.only(bottom: 10, right: 20),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -653,7 +662,8 @@ class _SortandFilterState extends State<SortandFilter> {
                                     Icon(
                                       under50
                                           ? Icons.check_box
-                                          : Icons.check_box_outline_blank_outlined,
+                                          : Icons
+                                              .check_box_outline_blank_outlined,
                                       size: 22,
                                       color: Colors.black.withOpacity(0.6),
                                     ),
@@ -683,12 +693,12 @@ class _SortandFilterState extends State<SortandFilter> {
                         GestureDetector(
                           onTap: () {
                             setState(() {
-
                               under100 = !under100;
                             });
                           },
                           child: Padding(
-                            padding: const EdgeInsets.only(bottom: 10, right: 20),
+                            padding:
+                                const EdgeInsets.only(bottom: 10, right: 20),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -698,7 +708,8 @@ class _SortandFilterState extends State<SortandFilter> {
                                     Icon(
                                       under100
                                           ? Icons.check_box
-                                          : Icons.check_box_outline_blank_outlined,
+                                          : Icons
+                                              .check_box_outline_blank_outlined,
                                       size: 22,
                                       color: Colors.black.withOpacity(0.6),
                                     ),
@@ -728,12 +739,12 @@ class _SortandFilterState extends State<SortandFilter> {
                         GestureDetector(
                           onTap: () {
                             setState(() {
-
                               under1000 = !under1000;
                             });
                           },
                           child: Padding(
-                            padding: const EdgeInsets.only(bottom: 10, right: 20),
+                            padding:
+                                const EdgeInsets.only(bottom: 10, right: 20),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -743,7 +754,8 @@ class _SortandFilterState extends State<SortandFilter> {
                                     Icon(
                                       under1000
                                           ? Icons.check_box
-                                          : Icons.check_box_outline_blank_outlined,
+                                          : Icons
+                                              .check_box_outline_blank_outlined,
                                       size: 22,
                                       color: Colors.black.withOpacity(0.6),
                                     ),
@@ -773,7 +785,8 @@ class _SortandFilterState extends State<SortandFilter> {
                   )),
 
               //Online Savings Accordion
-              FilterAccordion(title: "Online Savings",
+              FilterAccordion(
+                  title: "Online Savings",
                   content: Container(
                     width: MediaQuery.of(context).size.width,
                     child: Column(
@@ -781,17 +794,16 @@ class _SortandFilterState extends State<SortandFilter> {
                       //crossAxisAlignment: CrossAxisAlignment.start,
 
                       children: [
-
                         //Reduced Price
                         GestureDetector(
                           onTap: () {
                             setState(() {
-
                               reduced = !reduced;
                             });
                           },
                           child: Padding(
-                            padding: const EdgeInsets.only(bottom: 10, right: 20),
+                            padding:
+                                const EdgeInsets.only(bottom: 10, right: 20),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -801,7 +813,8 @@ class _SortandFilterState extends State<SortandFilter> {
                                     Icon(
                                       reduced
                                           ? Icons.check_box
-                                          : Icons.check_box_outline_blank_outlined,
+                                          : Icons
+                                              .check_box_outline_blank_outlined,
                                       size: 22,
                                       color: Colors.black.withOpacity(0.6),
                                     ),
@@ -831,12 +844,12 @@ class _SortandFilterState extends State<SortandFilter> {
                         GestureDetector(
                           onTap: () {
                             setState(() {
-
                               clearance = !clearance;
                             });
                           },
                           child: Padding(
-                            padding: const EdgeInsets.only(bottom: 10, right: 20),
+                            padding:
+                                const EdgeInsets.only(bottom: 10, right: 20),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -846,7 +859,8 @@ class _SortandFilterState extends State<SortandFilter> {
                                     Icon(
                                       clearance
                                           ? Icons.check_box
-                                          : Icons.check_box_outline_blank_outlined,
+                                          : Icons
+                                              .check_box_outline_blank_outlined,
                                       size: 22,
                                       color: Colors.black.withOpacity(0.6),
                                     ),
@@ -871,13 +885,13 @@ class _SortandFilterState extends State<SortandFilter> {
                             ),
                           ),
                         ),
-
                       ],
                     ),
                   )),
 
               //Availability Accordion
-              FilterAccordion(title: "Availability",
+              FilterAccordion(
+                  title: "Availability",
                   content: Container(
                     width: MediaQuery.of(context).size.width,
                     child: Column(
@@ -885,7 +899,6 @@ class _SortandFilterState extends State<SortandFilter> {
                       //crossAxisAlignment: CrossAxisAlignment.start,
 
                       children: [
-
                         //Online
                         GestureDetector(
                           onTap: () {
@@ -894,7 +907,8 @@ class _SortandFilterState extends State<SortandFilter> {
                             });
                           },
                           child: Padding(
-                            padding: const EdgeInsets.only(bottom: 10, right: 20),
+                            padding:
+                                const EdgeInsets.only(bottom: 10, right: 20),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -904,7 +918,8 @@ class _SortandFilterState extends State<SortandFilter> {
                                     Icon(
                                       online
                                           ? Icons.check_box
-                                          : Icons.check_box_outline_blank_outlined,
+                                          : Icons
+                                              .check_box_outline_blank_outlined,
                                       size: 22,
                                       color: Colors.black.withOpacity(0.6),
                                     ),
@@ -934,12 +949,12 @@ class _SortandFilterState extends State<SortandFilter> {
                         GestureDetector(
                           onTap: () {
                             setState(() {
-
                               instore = !instore;
                             });
                           },
                           child: Padding(
-                            padding: const EdgeInsets.only(bottom: 10, right: 20),
+                            padding:
+                                const EdgeInsets.only(bottom: 10, right: 20),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -949,7 +964,8 @@ class _SortandFilterState extends State<SortandFilter> {
                                     Icon(
                                       instore
                                           ? Icons.check_box
-                                          : Icons.check_box_outline_blank_outlined,
+                                          : Icons
+                                              .check_box_outline_blank_outlined,
                                       size: 22,
                                       color: Colors.black.withOpacity(0.6),
                                     ),
@@ -979,12 +995,12 @@ class _SortandFilterState extends State<SortandFilter> {
                         GestureDetector(
                           onTap: () {
                             setState(() {
-
                               scheduledorder = !scheduledorder;
                             });
                           },
                           child: Padding(
-                            padding: const EdgeInsets.only(bottom: 10, right: 20),
+                            padding:
+                                const EdgeInsets.only(bottom: 10, right: 20),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -994,7 +1010,8 @@ class _SortandFilterState extends State<SortandFilter> {
                                     Icon(
                                       scheduledorder
                                           ? Icons.check_box
-                                          : Icons.check_box_outline_blank_outlined,
+                                          : Icons
+                                              .check_box_outline_blank_outlined,
                                       size: 22,
                                       color: Colors.black.withOpacity(0.6),
                                     ),
@@ -1019,13 +1036,13 @@ class _SortandFilterState extends State<SortandFilter> {
                             ),
                           ),
                         ),
-
                       ],
                     ),
                   )),
 
               //Sold by Accordion
-              FilterAccordion(title: "Sold & shipped by",
+              FilterAccordion(
+                  title: "Sold & shipped by",
                   content: Container(
                     width: MediaQuery.of(context).size.width,
                     child: Column(
@@ -1033,16 +1050,14 @@ class _SortandFilterState extends State<SortandFilter> {
                       //crossAxisAlignment: CrossAxisAlignment.start,
 
                       children: [
-
                         //Amazon
                         GestureDetector(
                           onTap: () {
-                            setState(() {
-
-                            });
+                            setState(() {});
                           },
                           child: Padding(
-                            padding: const EdgeInsets.only(bottom: 10, right: 20),
+                            padding:
+                                const EdgeInsets.only(bottom: 10, right: 20),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -1073,35 +1088,68 @@ class _SortandFilterState extends State<SortandFilter> {
                             ),
                           ),
                         ),
-
                       ],
                     ),
                   )),
 
-               SizedBox(height: MediaQuery.of(context).size.height*0.1,)
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.1,
+              )
             ],
           ),
         ),
       ),
-
-        Positioned(
-            bottom: 0,left: 0,right: 0,
+      Positioned(
+          bottom: 0,
+          left: 0,
+          right: 0,
+          child: Container(
+            color: Color(0xffffffff),
+            height: MediaQuery.of(context).size.height * 0.1,
+            padding: EdgeInsets.all(10),
             child: Container(
-              color: Color(0xffffffff),
-              height: MediaQuery.of(context).size.height*0.1,
-              padding: EdgeInsets.all(10),
-              child: Container(
-                margin: EdgeInsets.only(top: 5,bottom: 5,left: 5,right: 5),
-                padding: EdgeInsets.only(bottom: 0,top: 0),
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                    color: Color(0xFF0071dc),
-                    borderRadius: BorderRadius.circular(20)
-                ),
-                child: Text("View results",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
+              margin: EdgeInsets.only(top: 5, bottom: 5, left: 5, right: 5),
+              padding: EdgeInsets.only(bottom: 0, top: 0),
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                  color: Color(0xFF0071dc),
+                  borderRadius: BorderRadius.circular(20)),
+              child: Text(
+                "View results",
+                style:
+                    TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
               ),
-            ))
-      ]
-    );
+            ),
+          )),
+      Positioned(
+        top: 5,
+        left: 20,
+        right: 20,
+        child: GestureDetector(
+          onVerticalDragUpdate: (details) {
+            setState(() {
+              _top += details.delta.dy;
+            });
+          },
+          onVerticalDragCancel: () => Navigator.pop(context),
+          child: Transform.translate(
+            offset: Offset(0, _top),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 5,
+                  width: 40,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.black.withOpacity(0.6),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      )
+    ]);
   }
 }

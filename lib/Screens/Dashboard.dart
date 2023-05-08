@@ -27,15 +27,18 @@ class _DashboardPageState extends State<DashboardPage> {
 
   final tabs = [
     const HomePage(), // 0
-    const MyProfile(),
-    const MenuPage(),
-    const AllCategories(),
-    const MyCart()
+    const MyProfile(), //1
+    const MenuPage(), //2
+    const AllCategories(), //3
+    const MyCart() //4
 
   ];
 
   @override
   Widget build(BuildContext context) {
+
+    int _selectedIndex = widget.tabindex;
+
 
     return SafeArea(
       child: Scaffold(

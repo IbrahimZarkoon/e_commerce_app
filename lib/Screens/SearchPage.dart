@@ -4,7 +4,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SearchPage extends StatefulWidget {
-  const SearchPage({Key? key}) : super(key: key);
+   SearchPage({Key? key, required this.tag}) : super(key: key);
+
+   final String tag;
 
   @override
   State<SearchPage> createState() => _SearchPageState();
@@ -14,6 +16,7 @@ class _SearchPageState extends State<SearchPage> {
 
   TextEditingController _searchCon = TextEditingController();
   final FocusNode _focusNode = FocusNode();
+
 
 
   @override
@@ -42,7 +45,7 @@ class _SearchPageState extends State<SearchPage> {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(MediaQuery.of(context).size.height*0.175),
+          preferredSize: Size.fromHeight(MediaQuery.of(context).size.height*0.15),
           child: Container(
             color: Color(0xFF0071dc),
             child: Column(
@@ -64,7 +67,7 @@ class _SearchPageState extends State<SearchPage> {
                 Container(
                   height: 40,
                   //width: MediaQuery.of(context).size.width*0.8,
-                  margin: const EdgeInsets.all(20),
+                  margin: const EdgeInsets.only(left: 20,right: 20,bottom: 0,top: 10),
                   padding: const EdgeInsets.only(left: 10, right: 10, bottom: 5,top: 5),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
@@ -84,7 +87,7 @@ class _SearchPageState extends State<SearchPage> {
                     children: [
 
                       Hero(
-                        tag: "searchbar",
+                        tag: widget.tag,
 
                         child: Container(
                             padding: const EdgeInsets.only(left: 5,right: 0,top: 0,bottom: 0),
@@ -132,11 +135,11 @@ class _SearchPageState extends State<SearchPage> {
 
             children: [
 
-              recentSearchCon("bed"),
+              recentSearchCon("Nike grippers"),
               
               recentSearchCon("Furniture"),
               
-              recentSearchCon("grocery")
+              recentSearchCon("Airpods pro")
 
             ],
           ),
@@ -148,7 +151,7 @@ class _SearchPageState extends State<SearchPage> {
   Widget recentSearchCon(String title)
   {
     return Container(
-      padding: EdgeInsets.only(top: 0,bottom: 20),
+      padding: EdgeInsets.only(top: 0,bottom: 10),
       decoration: BoxDecoration(
           border: Border(bottom: BorderSide(color: Colors.black.withOpacity(0.1),width: 0.5))
       ),
@@ -170,7 +173,7 @@ class _SearchPageState extends State<SearchPage> {
 
           Transform.rotate(
               angle: -45 * 0.0174533,
-              child: Icon(Icons.arrow_upward,size: 20,color: Colors.black.withOpacity(0.8),))
+              child: Icon(Icons.arrow_upward,size: 22,color: Colors.black.withOpacity(0.8),))
 
 
         ],

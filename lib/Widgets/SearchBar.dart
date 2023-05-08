@@ -41,7 +41,7 @@ Widget SearchBar(BuildContext context)
               child: TextField(
                 onTap: ()
                 {
-                  Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => SearchPage()));
+                  Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => SearchPage( tag: 'widgetSearchBar',)));
                 },
                 //controller: _searchCon,
                 //focusNode: _focusNode,
